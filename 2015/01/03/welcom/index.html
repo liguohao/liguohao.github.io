@@ -74,7 +74,7 @@
     </p>
   <p class="article-time">
     <time datetime="2015-01-03T09:10:02.000Z" itemprop="datePublished">Jan 3 2015</time>
-    Updated:<time datetime="2015-01-03T09:21:23.000Z" itemprop="dateModified">Jan 3 2015</time>
+    Updated:<time datetime="2015-01-03T09:45:52.000Z" itemprop="dateModified">Jan 3 2015</time>
     
   </p>
 </header>
@@ -87,7 +87,7 @@
 		</div>
 		
 		<p>1.读写文件时要使用Buffer进行缓冲，类比吃米饭。前几天写了一些关于文件读写的代码，感觉写的还不错，但是还是被老大找出很多问题，其中就有，读写的时候没有加Buffer缓冲。然后，我就带着这个问题去吃饭了，在吃的正香的时候恍然大悟。数据写入硬盘的过程就像人吃米饭，每一个字节就是一个米粒，人的口腔就是一个BufferedOutputStream，假如我们每次吃一粒米就咽下去，一碗米得猴年马月了，但是一嘴一嘴吃很快就完了，这就是当读写文件过大的时候要加buffer缓冲的重要性了。<br>2.多线程并发使用共享资源，类比几个人一块上厕所。那天晚上正在厕所蹲坑（关门加锁），边玩手机刷空间看新闻，玩着玩着就忘记了时间，这时候室友也急着上厕所，就在外面催我快点，我听到后就很快解决，给他腾出空间（释放锁）。出来之后我恍然大悟，突然弄明白了白天写的关于多线程并发访问共享资源的问题。厕所就是一个共享资源，当一个人过长时间占用这个资源，就会引起其他人排队。怎样才能让这个长时间占用共享资源的线程停掉呢？白天我编代码的时候就遇到这个问题，我有两种选择，一个就是直接杀死这个线程（事实证明这是一个很不明智的选择），一个就是传一个信息通知那个线程，你需要快点结束了，然后让它自己做好收尾工作再结束掉。再回到我蹲坑的问题，如果当时直接杀掉我蹲坑那个线程，额。。。。这里带来的严重后果可想而知。我在接收到室友需要使用这个资源的消息后，很快的做好了收尾工作，干净利落的出来了。（这里要感谢我的好室友，没有直接干掉我这个线程。）<br>待续。。。。。</p>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+<p>From: <a href="http://www.liguohao.com/?p=95" target="_blank" rel="external">耗子</a></p>
   
 	</div>
 		<footer class="article-footer clearfix">
